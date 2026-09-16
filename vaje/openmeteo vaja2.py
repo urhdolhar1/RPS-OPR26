@@ -21,5 +21,14 @@ source= f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lng}&
 
 odgovor = requests.get(source)
 podatki = odgovor.json()
+
 daily_temp= podatki["daily"]["temperature_2m_max"]
-print("trenutna:",podatki["current"]["temperature_2m"], "najvisja:", max(daily_temp) , "najnizja:", min(daily_temp))
+datum= podatki["daily"]["time"]
+
+print("trenutna:",podatki["current"]["temperature_2m"])
+print("--- Napoved za 7 dni ---")
+for i in range(7):
+    print(f"{datum[i]}: {daily_temp[i]} °C")
+
+print( )
+
