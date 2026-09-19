@@ -70,7 +70,16 @@ najhladnejsa_temp = hladni[najhladnejsi_indeks]
 print(f"Najhladnejši dan: {najhladnejsi_datum}, temperatura: {najhladnejsa_temp} °C")
 
 #Ugotovi, kateri dan ima največjo razliko med dnevno in nočno temperaturo.
+najvecja_razlika= 0
+dan_z_najvecjo_razliko= ""
 
+for i in range(7):
+    razlika = topli[i] - hladni[i]
+    if razlika > najvecja_razlika:
+        najvecja_razlika = razlika
+        dan_z_najvecjo_razliko = datum[i]
+
+print(f"Največjo razliko ima dan: {dan_z_najvecjo_razliko}, razlika je: {round(najvecja_razlika, 1)} °C")
 
 
 
