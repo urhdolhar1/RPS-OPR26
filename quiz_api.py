@@ -8,10 +8,10 @@ klic = requests.get(url).json()
  
 vprasanja = klic["results"]
  
-for v in vprasanja:10
-    print("-"*80)
+for v in vprasanja:
+    print("-----------------------------------------------------------------------------")
     pprint(v)
-    print("-"*80)
+    print("-----------------------------------------------------------------------------")
  
     print(html.unescape(v["question"]))  #odstrani HTML znake
     print(v["correct_answer"])
